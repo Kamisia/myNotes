@@ -1,0 +1,271 @@
+:root {
+  --main-color: #b53c31;
+  --detail-color: #f88941;
+  --background-color: #f8e5e3;
+  --white-color: #fff9f8;
+  --black-color: #0d0302;
+  --darkgray-color: #312e2c;
+  --gray-color: #a19892;
+  --info-color: #01373f;
+  --error-color: #b3271d;
+  --warning-color: #e0da1a;
+  --success-color: #3c5f00;
+  --option-one-color: #fcc4a0;
+  --option-two-color: #da9e98;
+  --option-three-color: #9fb0c8;
+  --option-four-color: #99c5bc;
+  --option-five-color: #ffeac5;
+
+  --transition: 0.3s ease-in-out all;
+
+  /*shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /*Gradient shadow*/
+  --gradient-shadow: linear-gradient(
+    rgba(255, 255, 253, 0.2),
+    rgba(8, 8, 0, 0.1)
+  );
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 200;
+  background-color: var(--background-color);
+  color: var(--black-color);
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  height: 120px;
+  background: var(--gradient-shadow);
+}
+
+.menu h1 i {
+  color: var(--main-color);
+  font-weight: 100;
+}
+.menu button,
+.note-panel .save,
+.note-panel .cancel {
+  padding: 1rem 1.5rem;
+  margin-right: 1.5rem;
+  background: none;
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color.3s;
+  color: var(--main-color);
+  font-weight: 100;
+}
+.menu button:hover,
+.note-panel .save:hover,
+.note-panel .cancel:hover {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+i {
+  margin-right: 0.5rem;
+}
+#title,
+#category,
+.note-panel option {
+  color: var(--black-color);
+  border: var(--darkgray-color) solid 1px;
+}
+.icon {
+  color: var(--main-color);
+  padding-right: 0.5rem;
+}
+
+.add {
+  margin-right: 20px;
+}
+.note-area {
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  padding: 20px;
+  font-family: "Montserrat";
+}
+.note {
+  margin: 40px 20px;
+  width: 240px;
+  border: 1px solid var(--gray-color);
+  box-shadow: var(--shadow-3);
+}
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--gradient-shadow);
+  font-size: 1.3rem;
+}
+.note-header .delete-note {
+  background: none;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.note-body {
+  padding: 20px 15px;
+  font-size: 1.2rem;
+}
+
+.note-panel {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 0;
+  width: 600px;
+  background-color: var(--white-color);
+  box-shadow: var(--shadow-1);
+  border-radius: 5px;
+}
+
+.note-panel h2 {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--main-color);
+  font-size: 2rem;
+}
+.note-panel label,
+.note-panel p {
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+.note-panel #text,
+.note-panel #title,
+.note-panel .choice-color {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  max-width: 90%;
+  max-height: 600px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--darkgray-color);
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--darkgray-color);
+  font-family: "Montserrat";
+}
+.note-panel .choice-color {
+  border: none;
+}
+.choice-color {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+#one {
+  background-color: var(--option-one-color);
+}
+#two {
+  background-color: var(--option-two-color);
+}
+#three {
+  background-color: var(--option-three-color);
+}
+#four {
+  background-color: var(--option-four-color);
+}
+#five {
+  background-color: var(--option-five-color);
+}
+
+.note-panel .error {
+  margin-bottom: 2rem;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--error-color);
+  visibility: hidden;
+}
+
+/*=======Choice Color======*/
+
+.container {
+  cursor: pointer;
+  display: inline-flex;
+  width: 40px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.container input {
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark1,
+.checkmark2,
+.checkmark3,
+.checkmark4,
+.checkmark5 {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+}
+.checkmark1 {
+  background-color: var(--option-one-color);
+}
+.checkmark2 {
+  background-color: var(--option-two-color);
+}
+.checkmark3 {
+  background-color: var(--option-three-color);
+}
+.checkmark4 {
+  background-color: var(--option-four-color);
+}
+.checkmark5 {
+  background-color: var(--option-five-color);
+}
+
+.container:hover input ~ .checkmark1,
+.container:hover input ~ .checkmark2,
+.container:hover input ~ .checkmark3,
+.container:hover input ~ .checkmark4,
+.container:hover input ~ .checkmark5 {
+  border: var(--detail-color) 1px solid;
+  width: 30px;
+  height: 30px;
+}
+
+.container input:checked ~ .checkmark1,
+.container input:checked ~ .checkmark2,
+.container input:checked ~ .checkmark3,
+.container input:checked ~ .checkmark4,
+.container input:checked ~ .checkmark5 {
+  border: var(--detail-color) 2px solid;
+  box-shadow: var(--detail-color) 2px 2px 2px;
+}
